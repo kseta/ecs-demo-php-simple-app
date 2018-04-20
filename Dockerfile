@@ -19,11 +19,11 @@
 #EXPOSE 80
 #
 #CMD ["apachectl", "-D", "FOREGROUND"]
-FROM ubuntu:12.04
+FROM ubuntu:16.04
 
 # Install dependencies
 RUN apt-get update -y
-RUN apt-get install -y git curl apache2 php5 libapache2-mod-php5
+RUN apt-get install -y git curl apache2 php libapache2-mod-php
 
 # Install app
 RUN rm -rf /var/www/*
