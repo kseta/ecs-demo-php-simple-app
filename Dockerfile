@@ -19,7 +19,7 @@
 #EXPOSE 80
 #
 #CMD ["apachectl", "-D", "FOREGROUND"]
-FROM ubuntu:16.04
+FROM ubuntu:12.04
 
 # Install dependencies
 RUN apt-get update -y
@@ -39,4 +39,5 @@ ENV APACHE_LOG_DIR /var/log/apache2
 
 EXPOSE 80
 
-CMD ["apachectl", "-D", "FOREGROUND"]
+#CMD ["apachectl", "-D", "FOREGROUND"]
+CMD ["/usr/sbin/apache2", "-D",  "FOREGROUND"]
