@@ -28,6 +28,7 @@ RUN apt-get install -y git curl apache2 php5 libapache2-mod-php5
 # Install app
 RUN rm -rf /var/www/*
 ADD src /var/www
+RUN ln -s /var/www /var/www/html
 
 # Configure apache
 RUN a2enmod rewrite
